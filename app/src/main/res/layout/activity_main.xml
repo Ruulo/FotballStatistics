@@ -1,60 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.lazar.fotballstatistics.MainActivity">
+    tools:context=".MainActivity">
+    <LinearLayout android:id="@+id/home_content" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
 
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true">
-
-        <LinearLayout
-            android:orientation="horizontal"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
 
-            <Button
-                android:text="red"
-                android:id="@+id/btn1"
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/logo"
+                android:layout_width="198dp"
+                android:layout_height="190dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cascaritalogo" />
+
+            <TextView
+                android:id="@+id/equipo1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onClick"
-                />
+                android:layout_marginLeft="60dp"
+                android:text="Equipo1"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logo" />
 
-            <Button
-                android:text="blue"
-                android:id="@+id/btn2"
+            <TextView
+                android:id="@+id/equipo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onClick"
-                />
+                android:layout_marginRight="60dp"
+                android:text="Equipo2"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logo"  />
 
-            <Button
-                android:text="green"
-                android:id="@+id/btn3"
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/equipo2Img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintLeft_toLeftOf="@id/equipo2"
+                app:layout_constraintRight_toRightOf="@id/equipo2"
+                app:layout_constraintTop_toBottomOf="@id/equipo2"
+                app:srcCompat="@drawable/barcelonalogo"/>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/equipo1Img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/realmadrid"
+                app:layout_constraintLeft_toLeftOf="@id/equipo1"
+                app:layout_constraintRight_toRightOf="@id/equipo1"
+                app:layout_constraintTop_toBottomOf="@id/equipo1" />
+
+            <TextView
+                android:id="@+id/equipo1Goles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onClick"
-                />
-        </LinearLayout>
+                android:foregroundTint="#FFFFFF"
+                android:foregroundTintMode="src_over"
+                android:text="0"
+                android:textSize="50dp"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintLeft_toLeftOf="@id/equipo1Img"
+                app:layout_constraintRight_toRightOf="@id/equipo1Img"
+                app:layout_constraintTop_toBottomOf="@id/equipo1Img" />
 
-        <FrameLayout
-            android:id="@+id/ContenedorFragments"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/equipo2Goles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="50dp"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintLeft_toLeftOf="@id/equipo2Img"
+                app:layout_constraintRight_toRightOf="@id/equipo2Img"
+                app:layout_constraintTop_toBottomOf="@id/equipo2Img" />
 
-        </FrameLayout>
+            <TextView
+                android:id="@+id/tiempo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="@color/colorAccent"
+                android:textSize="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/equipo1Goles" />
+        </android.support.constraint.ConstraintLayout>
+
     </LinearLayout>
-</RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
