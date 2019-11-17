@@ -13,15 +13,5 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        ConstraintLayout cl = (ConstraintLayout) findViewById(R.id.partido1);
-        cl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(in);
-
-            }
-        });
-
     }
 }

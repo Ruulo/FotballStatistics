@@ -12,6 +12,12 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+        assertEquals(1, db.getPartido(1).idPartido);
+    }
+
+    @Test
+    public void getEquipoPartido() throws Exception{
+        assertEquals(1, db.getPartido(1).idPartido);
+        assertEquals("RealMadrid", db.equipos.get(1).nombre);
     }
 }

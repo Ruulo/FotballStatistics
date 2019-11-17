@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/eA"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/barcelonalogo"
+        android:layout_alignParentStart="true">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/eAn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/eA"
+        android:textColor="@color/colorAccent"
+        android:text=""
+        ></TextView>
+
+    <TextView
+        android:id="@+id/eBn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/eB"
+        android:textColor="@color/colorAccent"
+        android:text=""
+        ></TextView>
+
+    <ImageView
+        android:id="@+id/eB"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/realmadrid"
+        android:layout_alignParentEnd="true">
+
+
+    </ImageView>
+
+</RelativeLayout>
