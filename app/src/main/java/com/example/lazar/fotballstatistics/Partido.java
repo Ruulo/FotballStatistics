@@ -1,7 +1,5 @@
 package com.example.lazar.fotballstatistics;
 
-import android.graphics.Bitmap;
-
 public class Partido {
 
     int idPartido;
@@ -9,23 +7,21 @@ public class Partido {
     int idEquipoA;
     int idEquipoB;
 
-    String equipo1;
-    String equipo2;
-
     int arbitro;
     String ubicacion;
 
-    public Partido(String idP, String eqA, String eqB, String arb, String ubi){
+    int golesA;
+    int golesB;
+
+    public Partido(String idP, String eqA, String eqB, String arb, String ubi, String ga, String gb){
+
         idPartido = Integer.parseInt(idP);
         idEquipoA = Integer.parseInt(eqA);
         idEquipoB = Integer.parseInt(eqB);
         arbitro = Integer.parseInt(arb);
+        golesA = Integer.parseInt(ga);
+        golesB = Integer.parseInt(gb);
         ubicacion = ubi;
-        if(db.equipos.get(idEquipoA) == null){
-            db.equipos.put(idEquipoA, db.getEquipo(idEquipoA));
-        }
-        if(db.equipos.get(idEquipoB) == null){
-            db.equipos.put(idEquipoB, db.getEquipo(idEquipoB));
-        }
+
     }
 }
