@@ -19,7 +19,7 @@
             app:srcCompat="@drawable/cascaritalogo" />
 
         <TextView
-            android:id="@+id/equipo1"
+            android:id="@+id/equipoA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
@@ -29,7 +29,7 @@
             app:layout_constraintTop_toBottomOf="@id/logo" />
 
         <TextView
-            android:id="@+id/equipo2"
+            android:id="@+id/equipoB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="60dp"
@@ -39,25 +39,23 @@
             app:layout_constraintTop_toBottomOf="@id/logo" />
 
         <ImageView
-            android:id="@+id/equipo2Img"
+            android:id="@+id/equipoBImg"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:layout_constraintLeft_toLeftOf="@id/equipo2"
-            app:layout_constraintRight_toRightOf="@id/equipo2"
-            app:layout_constraintTop_toBottomOf="@id/equipo2"
-            app:srcCompat="@drawable/barcelonalogo" />
+            app:layout_constraintLeft_toLeftOf="@id/equipoB"
+            app:layout_constraintRight_toRightOf="@id/equipoB"
+            app:layout_constraintTop_toBottomOf="@id/equipoB" />
 
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/equipo1Img"
+        <ImageView
+            android:id="@+id/equipoAImg"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:layout_constraintLeft_toLeftOf="@id/equipo1"
-            app:layout_constraintRight_toRightOf="@id/equipo1"
-            app:layout_constraintTop_toBottomOf="@id/equipo1"
-            app:srcCompat="@drawable/realmadrid" />
+            app:layout_constraintLeft_toLeftOf="@id/equipoA"
+            app:layout_constraintRight_toRightOf="@id/equipoA"
+            app:layout_constraintTop_toBottomOf="@id/equipoA"/>
 
         <TextView
-            android:id="@+id/equipo1Goles"
+            android:id="@+id/equipoAGoles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundTint="#FFFFFF"
@@ -65,31 +63,20 @@
             android:text="0"
             android:textColor="@color/colorAccent"
             android:textSize="50dp"
-            app:layout_constraintLeft_toLeftOf="@id/equipo1Img"
-            app:layout_constraintRight_toRightOf="@id/equipo1Img"
-            app:layout_constraintTop_toBottomOf="@id/equipo1Img" />
+            app:layout_constraintLeft_toLeftOf="@id/equipoAImg"
+            app:layout_constraintRight_toRightOf="@id/equipoAImg"
+            app:layout_constraintTop_toBottomOf="@id/equipoAImg" />
 
         <TextView
-            android:id="@+id/equipo2Goles"
+            android:id="@+id/equipoBGoles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
             android:textColor="@color/colorAccent"
             android:textSize="50dp"
-            app:layout_constraintLeft_toLeftOf="@id/equipo2Img"
-            app:layout_constraintRight_toRightOf="@id/equipo2Img"
-            app:layout_constraintTop_toBottomOf="@id/equipo2Img" />
+            app:layout_constraintLeft_toLeftOf="@id/equipoBImg"
+            app:layout_constraintRight_toRightOf="@id/equipoBImg"
+            app:layout_constraintTop_toBottomOf="@id/equipoBImg" />
 
-        <TextView
-            android:id="@+id/tiempo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="00:00"
-            android:textColor="@color/colorAccent"
-            android:textSize="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/equipo1Goles" />
 
 </android.support.constraint.ConstraintLayout>

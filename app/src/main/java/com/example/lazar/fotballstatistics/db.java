@@ -138,6 +138,60 @@ public class db {
 
     }
 
+    static void loadEquipoRank(int id, View v, int goles, int rank) {
+        final View vi = v;
+        final int r = rank;
+        final int g = goles;
+        if (equipos.get(id) == null) {
+            try {
+                AsyncHttpClient client = new AsyncHttpClient();
+                client.get("https://cascaritaapp.000webhostapp.com/webservice/equipo.php?id=" + id, new AsyncHttpResponseHandler() {
+
+                    @Override
+                    public void onStart() {
+                        // called before request is started
+                    }
+
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, byte[] response) {
+                        // called when response HTTP status is "200 OK"
+                        String st = new String(response);
+                        Log.d("TEST", "x: " + st);
+                        ObjectMapper mapper = new ObjectMapper();
+                        Map<String, String> map = null;
+                        try {
+                            map = mapper.readValue(st, Map.class);
+                            Equipo e = new Equipo(map.get("nombre"), map.get("escudo"));
+                            equipos.put(Integer.valueOf(map.get("idEquipo")), e);
+                            Log.d("TEST", map.get("idEquipo"));
+                            Ranking.addEquipo(e, r, g, vi);
+                            vi.setVisibility(View.VISIBLE);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] errorResponse, Throwable e) {
+                        // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+                    }
+
+                    @Override
+                    public void onRetry(int retryNo) {
+                        // called when request is retried
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            Ranking.addEquipo(equipos.get(id), r, g, vi);
+        }
+    }
+
 
 
 }

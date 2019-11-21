@@ -3,10 +3,10 @@ package com.example.lazar.fotballstatistics;
 public class loaderPartido {
 
     int ready = 0;
-    Menu men;
+    Partidos men;
     int partido;
 
-    public loaderPartido(int partido, Menu m){
+    public loaderPartido(int partido, Partidos m){
         men = m;
         this.partido = partido;
         db.loadPartido(partido, this);
