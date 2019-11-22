@@ -52,18 +52,10 @@ public class Partidos extends Activity {
 
     public void addPartido(Partido p){
         LinearLayout ll = (LinearLayout)findViewById(R.id.listView);
-        View c = getLayoutInflater().inflate(R.layout.partido, null);
+        View c = getLayoutInflater().inflate(R.layout.partido, ll, false);
         c.setClickable(true);
         final Partido part = p;
-        c.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("TEST", "Click");
-                MainActivity.partido = part;
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
-            }
-        });
+
         TextView tvA = (TextView) c.findViewById(R.id.eAn);
         TextView tvB = (TextView) c.findViewById(R.id.eBn);
         ImageView ivA = (ImageView) c.findViewById(R.id.eA);
@@ -81,6 +73,15 @@ public class Partidos extends Activity {
             }
         });
         ll.addView(c);
+        c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("TEST", "Click");
+                MainActivity.partido = part;
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void loadAll(){

@@ -15,6 +15,9 @@ public class Menu extends Activity {
         setContentView(R.layout.activity_menu);
     }
 
+
+
+
     public void Ranking(View v){
         Intent i = new Intent(getApplicationContext(), Ranking.class);
         startActivity(i);
