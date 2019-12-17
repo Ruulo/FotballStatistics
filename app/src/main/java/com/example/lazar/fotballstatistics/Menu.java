@@ -2,10 +2,11 @@ package com.example.lazar.fotballstatistics;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.provider.Telephony;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import com.google.android.gms.ads.MobileAds;
+
+
 
 public class Menu extends Activity {
 
@@ -13,6 +14,8 @@ public class Menu extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        MobileAds.initialize(this);
+
     }
 
 

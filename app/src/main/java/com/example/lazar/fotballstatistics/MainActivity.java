@@ -6,12 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class MainActivity extends Activity {
     public static Partido partido;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AdView mAdView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
         TextView eqA = (TextView) findViewById(R.id.equipoA);
         TextView eqB = (TextView) findViewById(R.id.equipoB);
